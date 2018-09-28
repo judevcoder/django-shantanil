@@ -1,0 +1,317 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href={% static 'img/favicon.png' %}>
+    <title>{% block title %}{% endblock %} Admin Panel</title>
+    <link href={% static 'css/dashboard/bootstrap.min.css' %} rel="stylesheet">
+    <link href={% static 'css/style.css' %} rel="stylesheet">
+    <link href={% static 'css/colors/blue.css' %} id="theme" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href={% static 'css/font-awesome.css' %} />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body class="fix-header fix-sidebar card-no-border">
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <div id="main-wrapper">
+        {% include 'layouts/header.html' %}
+        {% include 'layouts/navbar.html' %}
+        <div class="page-wrapper">
+            {% block content %}{% endblock %}
+            {% include 'layouts/footer.html' %}
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">EDIT DATABASE</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="field">
+                            <label>Datasource name</label>
+                            <input type="text" placeholder="ADU CRM PreStage"/>
+                        </div>
+                        <div class="field">
+                            <label>Discription</label>
+                            <input type="text" placeholder="This database to load all the required tables to build the 11 CRM entities"/>
+                        </div>
+                        <div class="field">
+                            <label>Datastore Name</label>
+                            <select>
+                                <option>HDI System HDFS</option>
+                                <option>HDI System HDFS</option>
+                                <option>HDI System HDFS</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Databasse Name</label>
+                            <input type="text" placeholder="edu_crm_prestg"/>
+                        </div>
+                        <div class="field">
+                            <label>User Name</label>
+                            <input type="text" placeholder="unifi"/>
+                        </div>
+                        <div class="field">
+                            <label>Password</label>
+                            <input type="password" placeholder=""/>
+                        </div>
+                        <div class="field">
+                            <label class="line"><input class="pull-left" type="checkbox"/> Allow as Output Destination</label>
+                        </div>
+                        <div class="field">
+                            <label>Permissions</label>
+                            <select>
+                                <option>6 Selected users</option>
+                                <option>6 Selected users</option>
+                                <option>6 Selected users</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Tags</label>
+                            <input type="text" placeholder=""/>
+                        </div>
+                        <div class="field normal-sapce">
+                            <div class="row">
+                                <div class="col-lg-3 offset-lg-3 col-sm-3 offset-sm-3 col-12">
+                                    <label class="line"><input class="pull-left" type="checkbox"/> Import New Database &nbsp;&nbsp;<img src={% static 'img/img-2.png' %} alt=""/></label>
+                                </div>
+                                <div class="col-lg-5 offset-lg-1 col-sm-6 col-12">
+                                    <label class="line"><input class="pull-left" type="checkbox"/> Re-Import New Database &nbsp;&nbsp;<img src={% static 'img/img-2.png' %} alt=""/></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field normal-sapce">
+                            <label class="line-two"><img class="pull-left" src={% static 'img/img-3.png' %} alt=""/> To import new objects and re-import existing objects at the same time just select both checkboxes.</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+                        <button type="button" class="btn btn-primary">SAVE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bottom-0">
+                    <div class="top-style">
+                        <h4 class="modal-title" id="myModalLabel">CREATE DATA SOURCE</h4>
+                        <button type="button" class="close top-m" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                             <a class="nav-link active" data-toggle="tab" href="#home">DATABASE</a>
+                        </li>
+                        <li class="nav-item">
+                             <a class="nav-link" data-toggle="tab" href="#profile">FILESYSTEM (21)</a>
+                        </li>
+                        <li class="nav-item">
+                             <a class="nav-link" data-toggle="tab" href="#messages">SERVICE</a>
+                        </li>
+                        <!--
+                        <a href="#home" aria-controls="home" role="tab" data-toggle="tab">DATABASE</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">FILESYSTEM (21)</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">SERVICE</a></li>
+                        -->
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home">
+                        <form>
+                            <div class="modal-body field-space">
+                                <!-- Tab panes -->
+                                <div class="field">
+                                    <label>Datasource name</label>
+                                    <input type="text" placeholder="ADU CRM PreStage"/>
+                                </div>
+                                <div class="field">
+                                    <label>Discription</label>
+                                    <input type="text" placeholder=""/>
+                                </div>
+                                <div class="field">
+                                    <label>Datastore Name</label>
+                                    <select>
+                                        <option>HDI System HDFS</option>
+                                        <option>HDI System HDFS</option>
+                                        <option>HDI System HDFS</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label>Permissions</label>
+                                    <select>
+                                        <option>6 Selected users</option>
+                                        <option>6 Selected users</option>
+                                        <option>6 Selected users</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label>Tags</label>
+                                    <input type="text" placeholder=""/>
+                                </div>
+                                <div class="field normal-sapce">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-sm-12 col-12">
+                                            <label class="line"><input class="pull-left" type="checkbox"/> Import Database </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+                                <button type="button" class="btn btn-primary">ADD SOURCE</button>
+                            </div>
+                        <form>
+                    </div>
+                    <div class="tab-pane" id="profile">
+                        <form>
+                            <div class="modal-body field-space">
+                                <!-- Tab panes -->
+                                <div class="field">
+                                    <label>Datasource name</label>
+                                    <input type="text" placeholder="ADU CRM PreStage"/>
+                                </div>
+                                <div class="field">
+                                    <label>Discription</label>
+                                    <input type="text" placeholder=""/>
+                                </div>
+                                <div class="field">
+                                    <label>Datastore Name</label>
+                                    <select>
+                                        <option>HDI System HDFS</option>
+                                        <option>HDI System HDFS</option>
+                                        <option>HDI System HDFS</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label>User Name</label>
+                                    <input type="text" placeholder=""/>
+                                </div>
+                                <div class="field">
+                                    <label>Base directory</label>
+                                    <input type="text" placeholder=""/>
+                                </div>
+                                <div class="field normal-sapce">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-sm-12 col-12">
+                                            <label class="line"><input class="pull-left" type="checkbox"/> Allow as Output Destination </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label>Permissions</label>
+                                    <select>
+                                        <option>6 Selected users</option>
+                                        <option>6 Selected users</option>
+                                        <option>6 Selected users</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label>Tags</label>
+                                    <input type="text" placeholder=""/>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+                                <button type="button" class="btn btn-primary">ADD SOURCE</button>
+                            </div>
+                        <form>
+                    </div>
+                    <div class="tab-pane" id="messages">
+                        <form>
+                            <div class="modal-body field-space">
+                                <!-- Tab panes -->
+                                <div class="field">
+                                    <label>Datasource name</label>
+                                    <input type="text" placeholder="ADU CRM PreStage"/>
+                                </div>
+                                <div class="field">
+                                    <label>Discription</label>
+                                    <input type="text" placeholder=""/>
+                                </div>
+                                <div class="field">
+                                    <label>Datastore Name</label>
+                                    <select>
+                                        <option>HDI System HDFS</option>
+                                        <option>HDI System HDFS</option>
+                                        <option>HDI System HDFS</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label>Permissions</label>
+                                    <select>
+                                        <option>6 Selected users</option>
+                                        <option>6 Selected users</option>
+                                        <option>6 Selected users</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label>Tags</label>
+                                    <input type="text" placeholder=""/>
+                                </div>
+                                <div class="field normal-sapce">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-sm-12 col-12">
+                                            <label class="line"><input class="pull-left" type="checkbox"/> Import Database </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+                                <button type="button" class="btn btn-primary">ADD SOURCE</button>
+                            </div>
+                        <form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src={% static 'js/jquery-1.11.1.js' %}></script>
+    <script src={% static 'js/dashboard/bootstrap.js' %}></script>
+    <script src={% static 'js/custom.min.js' %}></script>
+    <script src={% static 'js/popper.min.js' %}></script>
+
+    <script src={% static 'js/jquery.slimscroll.js' %}></script>
+    <script src={% static 'js/waves.js' %}></script>
+    <script src={% static 'js/sidebarmenu.js' %}></script>
+    <script src={% static 'js/sticky-kit.min.js' %}></script>
+
+    {#<script src={% static 'js/my.js' %}></script>#}
+    <script>
+        $(".main_m").click(function(e){
+            e.stopPropagation()
+            $(".main_m").find("ul").css({"opacity": "0"});
+            $(this).find("ul").css({"opacity": "1"});
+            $(".main_m").find(".triangle").css({"opacity": "0"});
+            $(this).find(".triangle").css({"opacity": "1"});
+        });
+    $(document.body).click( function() {
+        $(".main_m").find("ul").css({"opacity": "0"});
+        $(".main_m").find(".triangle").css({"opacity": "0"});
+    });
+    $('.nav-tabs a').click(function(){
+        $(this).tab('show');
+    })
+    </script>
+</body>
+</html>

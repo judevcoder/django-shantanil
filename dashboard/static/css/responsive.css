@@ -1,0 +1,56 @@
+/*--------------------------------------------------------------
+15. Media queries
+--------------------------------------------------------------*/
+@media only screen and (min-device-width: 1400px) and (max-device-width: 1600px){ 
+   
+
+}
+@media only screen and (min-width : 1600px) {
+
+}
+@media only screen and (max-width: 1200px) {
+}
+@media only screen and (max-width: 980px) {
+  
+}
+@media only screen and (max-width: 800px) {
+
+}
+@media only screen and (max-width: 768px) {
+
+}
+@media (max-width: 767px) {
+	
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (max-width: 640px) {
+  
+}
+    
+
+@media only screen and (max-width: 590px) {
+}
+@media only screen and (max-width: 510px) {
+}
+@media only screen and (max-width: 480px) {
+  
+}
+@media only screen and (max-width: 400px) {
+
+}
+@media screen and (max-width: 375px){
+
+}
+@media screen and (max-width: 321px){
+
+}
+
+
+
+
+
+
+

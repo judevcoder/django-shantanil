@@ -1,0 +1,66 @@
+
+{% load static %}
+
+{% block navbar %}
+    <aside class="left-sidebar">
+        <div class="scroll-sidebar">
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li class="main_m">
+                        <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src={% static 'img/menu-icons/home.png' %} class="img img-fluid"><br><span class="hide-menu">Home</span></a>
+                        <img src={% static 'img/triangle.png' %} class="img img-fluid triangle">
+                         <ul>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/home.png' %} class="img img-fluid"> Dashboard</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="main_m">
+                        <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src={% static 'img/menu-icons/source.png' %} class="img img-fluid"><br><span class="hide-menu">Connections</span></a>
+                         <img src={% static 'img/triangle.png' %} class="img img-fluid triangle">
+                         <ul>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/adapters.png' %} class="img img-fluid"> Adapter</a></li>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/conection.png' %} class="img img-fluid"> Connection</a></li>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/data-source.png' %} class="img img-fluid"> Data Source</a></li>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/data-feeds.png' %} class="img img-fluid"> Data Target</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="main_m">
+                        <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src={% static 'img/menu-icons/category.png' %} class="img img-fluid"><br><span class="hide-menu">Data Catalog</span></a>
+                        <img src={% static 'img/triangle.png' %} class="img img-fluid triangle">
+                          <ul>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/data-catelog.png' %} class="img img-fluid"> Show Catalog</a></li>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/data-set.png' %} class="img img-fluid"> Create Dataset</a></li>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/search-data.png' %} class="img img-fluid"> Search Elements</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="main_m">
+                        <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src={% static 'img/menu-icons/data-linage.png' %} class="img img-fluid"><br><span class="hide-menu">Data Lieage</span></a>
+                        <img src={% static 'img/triangle.png' %} class="img img-fluid triangle">
+                         <ul>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/search-data.png' %} class="img img-fluid"> Search by Element</a></li>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/link2catellog.png' %} class="img img-fluid"> Map Sources Lineage</a></li>
+                             <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/business-glossary.png' %} class="img img-fluid"> Map Targets Lineage</a></li>
+                              <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/report-bytt.png' %} class="img img-fluid"> Show Lineage</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="main_m">
+                        <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src={% static 'img/menu-icons/glossary.png' %} class="img img-fluid"><br><span class="hide-menu">Scheduler</span></a>
+                         <img src={% static 'img/triangle.png' %} class="img img-fluid triangle">
+                        <ul>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/business-glossary.png' %} class="img img-fluid"> Show schedule</a></li>
+                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/assin.png' %} class="img img-fluid">Create schedule
+                            </a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="sidebar-footer text-center">
+            <a href="" class="link text-center" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+        </div>
+    </aside>
+{% endblock %}
