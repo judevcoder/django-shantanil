@@ -173,4 +173,10 @@ position: absolute;
     color: #054905;
 }
 
+#required_username {
+    display: none;
+}
 
+#required_password {
+    display: none;
+}

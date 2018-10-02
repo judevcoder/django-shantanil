@@ -1,11 +1,7 @@
 from django.urls import path
-from django.views.generic.base import RedirectView
+from django.contrib.auth.decorators import login_required
 from . import views
 
 urlpatterns = [
-    path('dashboard', views.DashboardView.as_view(), name='dashboard_page'),
-    path('', RedirectView.as_view(url='login', permanent=False), name='index'),
-
-    path('login/', views.LoginView.as_view(),name='login'),
-    # url(r'^logout/', views.logout, name='logout'),
+    path('', login_required(views.DashboardView.as_view()), name='dashboard_page')
 ]
