@@ -10,7 +10,7 @@
                         <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src={% static 'img/menu-icons/home.png' %} class="img img-fluid"><br><span class="hide-menu">Home</span></a>
                         <img src={% static 'img/triangle.png' %} class="img img-fluid triangle">
                          <ul>
-                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/home.png' %} class="img img-fluid"> Dashboard</a></li>
+                            <li><a href="{% url 'dashboard' %}"><img src={% static 'img/menu-icons/sub-menu/home.png' %} class="img img-fluid"> Dashboard</a></li>
                         </ul>
                     </li>
 
@@ -18,8 +18,8 @@
                         <a class="waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src={% static 'img/menu-icons/source.png' %} class="img img-fluid"><br><span class="hide-menu">Connections</span></a>
                          <img src={% static 'img/triangle.png' %} class="img img-fluid triangle">
                          <ul>
-                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/adapters.png' %} class="img img-fluid"> Adapter</a></li>
-                            <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/conection.png' %} class="img img-fluid"> Connection</a></li>
+                            <li><a href="{% url 'adapter' %}"><img src={% static 'img/menu-icons/sub-menu/adapters.png' %} class="img img-fluid"> Adapter</a></li>
+                            <li><a href="{% url 'connection' %}"><img src={% static 'img/menu-icons/sub-menu/conection.png' %} class="img img-fluid"> Connection</a></li>
                             <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/data-source.png' %} class="img img-fluid"> Data Source</a></li>
                             <li><a href="#"><img src={% static 'img/menu-icons/sub-menu/data-feeds.png' %} class="img img-fluid"> Data Target</a></li>
                         </ul>

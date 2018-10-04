@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="col-lg-7 p-0">
                                 <div class="form-left text-center">
-                                    <form role="form" method="post" class="login-form">
+                                    <form action="/login/" method="post" class="login-form">
                                         {% csrf_token %}
                                         {% if form.errors %}
                                             {% for field in form %}
@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="row d-flex justify-content-between mt-4 mb-3">
                                             <a  href="" class="text-green">Forgot Password?</a>
-                                            <a  href="" class="text-green">Create new account?</a>
+                                            <a  href="{% url 'signup' %}" class="text-green">Create new account?</a>
                                         </div>
                                     </form>
                                 </div>

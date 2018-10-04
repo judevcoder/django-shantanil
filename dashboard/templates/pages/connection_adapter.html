@@ -1,0 +1,277 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+    <section id="content">
+        <div class="top-head">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 xs-flush hidden-xs col-sm-4 col-12">
+                        <ul>
+                            <li><a href="#"><img src={% static 'img/icon-8.png' %} alt=""/></a></li>
+                            <li><a href="#"><img src={% static 'img/icon-9.png' %} alt=""/></a></li>
+                            <li><a href="#"><img src={% static 'img/icon-10.png' %} alt=""/></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 xs-flush xs-left text-right col-sm-8 col-12">
+                        <ul class="right-menu">
+                            <li><a href="#"><img alt="" src={% static 'img/icon-12.png' %} /></a></li>
+                            <li><a href="#"><img src={% static 'img/icon-13.png' %} alt=""/></a></li>
+                            <li><a href="#"><img src={% static 'img/icon-14.png' %} alt=""/></a></li>
+                            <li>
+                                <div class="dropdown">
+                                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-4 col-4">
+                                            <img  alt="" src={% static 'img/img-1.png' %}/>
+                                        </div>
+                                        <div class="col-lg-7 text-left col-sm-7 col-7">
+                                            <h5>kendall Jenner</h5>
+                                            <h6>Cheif Authority</h6>
+                                        </div>
+                                        <div class="col-lg-1 text-center flush col-sm-1 col-1">
+                                            <a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                  </button>
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Link 1</a>
+                                    <a class="dropdown-item" href="#">Link 2</a>
+                                    <a class="dropdown-item" href="#">Link 3</a>
+                                  </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="adapters full-height">
+            <div class="adapters-border">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-12">
+                            <h6><img src="img/icon-15.png" alt=""/>&nbsp;&nbsp; Adapters</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-3 col-12">
+                            <input type="search"/>
+                        </div>
+                    </div>
+                </div>
+            <div class="container-fluid full-height">
+                <div class="row full-height">
+                    <div class="col-lg-12 xs-flush col-sm-12 col-12 full-height">
+                        <div class="white-bg">
+                            <div class="gallery-bg">
+                                <div class="row">
+                                    <div class="col-lg-9 col-sm-9 col-12">
+                                        <div id="gallery-menu">
+                                            <a href="#" data-liquo="all" class="btn btn-primary">ALL (65)</a>
+                                            <a href="#" data-liquo="1" class="btn btn-warning">DATABASE (35)</a>
+                                            <a href="#" data-liquo="2" class="btn btn-warning">FILESYSTEM (21)</a>
+                                            <a href="#" data-liquo="3" class="btn btn-warning">SERVICE (11)</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 dark-green text-right col-sm-3 col-12">
+                                        <select>
+                                            <option>ALL</option>
+                                            <option>ALL</option>
+                                            <option>ALL</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul id="gallery">
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="1">
+                                    <div class="gray">
+                                        <img src="img/img-2.png" alt=""/><br>
+                                        EMR HDFS   |  5.8
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="2">
+                                    <div class="gray">
+                                        <img src="img/img-3.png" alt=""/><br>
+                                        Youtube Analytics   |  15.7
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="3">
+                                    <div class="gray">
+                                        <img src="img/img-6.png" alt=""/><br>
+                                        Remote File System
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="3">
+                                    <div class="gray">
+                                        <img src="img/img-4.png" alt=""/><br>
+                                        Google Sheets
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="1">
+                                    <div class="gray">
+                                        <img src="img/img-5.png" alt=""/><br>
+                                        MySql    |  7.4
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="2">
+                                    <div class="gray">
+                                        <img src="img/img-6.png" alt=""/><br>
+                                        EMR HDFS   |  5.8
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="1">
+                                    <div class="gray">
+                                        <img src="img/img-2.png" alt=""/><br>
+                                        EMR HDFS   |  5.8
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="2">
+                                    <div class="gray">
+                                        <img src="img/img-3.png" alt=""/><br>
+                                        Youtube Analytics   |  15.7
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="3">
+                                    <div class="gray">
+                                        <img src="img/img-3.png" alt=""/><br>
+                                        Remote File System
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="3">
+                                    <div class="gray">
+                                        <img src="img/img-4.png" alt=""/><br>
+                                        Google Sheets
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="1">
+                                    <div class="gray">
+                                        <img src="img/img-6.png" alt=""/><br>
+                                        MySql    |  7.4
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="2">
+                                    <div class="gray">
+                                        <img src="img/img-2.png" alt=""/><br>
+                                        EMR HDFS   |  5.8
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="1">
+                                    <div class="gray">
+                                        <img src="img/img-2.png" alt=""/><br>
+                                        EMR HDFS   |  5.8
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="2">
+                                    <div class="gray">
+                                        <img src="img/img-3.png" alt=""/><br>
+                                        Youtube Analytics   |  15.7
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="3">
+                                    <div class="gray">
+                                        <img src="img/img-3.png" alt=""/><br>
+                                        Remote File System
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="3">
+                                    <div class="gray">
+                                        <img src="img/img-4.png" alt=""/><br>
+                                        Google Sheets
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="1">
+                                    <div class="gray">
+                                        <img src="img/img-6.png" alt=""/><br>
+                                        MySql    |  7.4
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="2">
+                                    <div class="gray">
+                                        <img src="img/img-2.png" alt=""/><br>
+                                        EMR HDFS   |  5.8
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="1">
+                                    <div class="gray">
+                                        <img src="img/img-2.png" alt=""/><br>
+                                        EMR HDFS   |  5.8
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="2">
+                                    <div class="gray">
+                                        <img src="img/img-3.png" alt=""/><br>
+                                        Youtube Analytics   |  15.7
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="3">
+                                    <div class="gray">
+                                        <img src="img/img-3.png" alt=""/><br>
+                                        Remote File System
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="3">
+                                    <div class="gray">
+                                        <img src="img/img-4.png" alt=""/><br>
+                                        Google Sheets
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="1">
+                                    <div class="gray">
+                                        <img src="img/img-6.png" alt=""/><br>
+                                        MySql    |  7.4
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="2">
+                                    <div class="gray">
+                                        <img src="img/img-2.png" alt=""/><br>
+                                        EMR HDFS   |  5.8
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="1">
+                                    <div class="gray">
+                                        <img src="img/img-2.png" alt=""/><br>
+                                        EMR HDFS   |  5.8
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="2">
+                                    <div class="gray">
+                                        <img src="img/img-3.png" alt=""/><br>
+                                        Youtube Analytics   |  15.7
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="3">
+                                    <div class="gray">
+                                        <img src="img/img-3.png" alt=""/><br>
+                                        Remote File System
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="3">
+                                    <div class="gray">
+                                        <img src="img/img-4.png" alt=""/><br>
+                                        Google Sheets
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="1">
+                                    <div class="gray">
+                                        <img src="img/img-6.png" alt=""/><br>
+                                        MySql    |  7.4
+                                    </div>
+                                </li>
+                                <li class="col-lg-2 col-sm-4 col-12" data-liquo="2">
+                                    <div class="gray">
+                                        <img src="img/img-2.png" alt=""/><br>
+                                        EMR HDFS   |  5.8
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

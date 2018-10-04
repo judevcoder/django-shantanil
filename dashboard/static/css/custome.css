@@ -180,3 +180,19 @@ position: absolute;
 #required_password {
     display: none;
 }
+
+.top-details {
+    z-index: 0;
+}
+
+.sidebar-nav ul li ul {
+    z-index: 1;
+}
+
+.sidebar-nav ul li a.active {
+    color: #fff !important;
+}
+
+/*.sidebar-nav ul li ul {*/
+    /*display: none;*/
+/*}*/
