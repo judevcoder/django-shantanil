@@ -19,6 +19,6 @@ class UserLogger(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'user_logger'
+        db_table = 'cdg_user_logger'
 
 # class Connection(models.Model):

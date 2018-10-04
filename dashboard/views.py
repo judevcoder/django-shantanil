@@ -9,12 +9,15 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm
 from .models import UserLogger
 from django.contrib.auth.models import User
+from django.core.exceptions import PermissionDenied
 
 
 @login_required(login_url='/accounts/login/')
 def home(request):
     return HttpResponseRedirect('/dashboard/')
 
+class LimitExceeed(PermissionDenied):
+    pass
 
 def signup(request):
     if request.method == 'POST':
@@ -22,6 +25,8 @@ def signup(request):
         if form.is_valid():
             # user_ip = get_user_ip(request)
             # user_hostname = socket.gethostbyaddr(user_ip)[0]
+            if User.objects.count() > 4:
+                raise LimitExceeed
             form.save()
 
             username = form.cleaned_data.get('username')
@@ -58,6 +63,17 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
+
+                created_user = User.objects.get(id=user.id)
+
+                logger = UserLogger(
+                    login_ipaddress=get_user_ip(request),
+                    login_hostname=request.META['HTTP_HOST'],
+                    username=username,
+                    user=created_user
+                )
+
+                logger.save()
                 return HttpResponseRedirect('/dashboard/', {'user':user})
     return HttpResponseRedirect('/accounts/login')
 
@@ -65,6 +81,7 @@ def login_user(request):
 @login_required(login_url='/accounts/login/')
 def dashboard(request):
     user = request.user
+    users = User.objects.all()
     return render_to_response('pages/dashboard.html', locals(), RequestContext(request))
 
 
@@ -73,7 +90,9 @@ def connection_adapter(request):
 
 
 def connection(request):
-    return render_to_response('pages/connection.html')
+    user = request.user
+    users = User.objects.all()
+    return render_to_response('pages/connection.html', locals(), RequestContext(request))
 
 
 def get_user_ip(request):
