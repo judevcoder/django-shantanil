@@ -10,6 +10,7 @@ from .forms import SignUpForm
 from .models import UserLogger
 from django.contrib.auth.models import User
 from django.core.exceptions import PermissionDenied
+from django.contrib import messages
 
 
 @login_required(login_url='/accounts/login/')
@@ -23,10 +24,10 @@ def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            # user_ip = get_user_ip(request)
-            # user_hostname = socket.gethostbyaddr(user_ip)[0]
             if User.objects.count() > 4:
-                raise LimitExceeed
+                form = SignUpForm()
+                messages.add_message(request, messages.ERROR, '5 Users are existed already', extra_tags='error')
+                return render(request, 'registration/signup.html', {'form': form})
             form.save()
 
             username = form.cleaned_data.get('username')
@@ -43,6 +44,7 @@ def signup(request):
             )
 
             logger.save()
+            messages.add_message(request, messages.SUCCESS, "Registration successful.", extra_tags='success')
 
             login(request, user)
 
@@ -79,10 +81,11 @@ def login_user(request):
                 )
 
                 logger.save()
-
                 if next_page:
                     return HttpResponseRedirect(next_page, {'user': user})
                 return HttpResponseRedirect('/dashboard/', {'user':user})
+        else:
+            messages.add_message(request, messages.ERROR, "Invalid username or password!", extra_tags='error')
     return HttpResponseRedirect('/accounts/login')
 
 

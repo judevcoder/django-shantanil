@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% for message in messages %}
+      <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
     <div class="container-fluid">
         <div class="row">
             <!-- Column -->

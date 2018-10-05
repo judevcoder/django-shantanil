@@ -37,6 +37,11 @@
                                 <div class="form-left text-center">
                                     <form action="/login/" method="post" class="login-form">
                                         {% csrf_token %}
+                                        {% for message in messages %}
+                                            <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                                                {{ message }}
+                                            </div>
+                                        {% endfor %}
                                         {% if next %}
                                             <input type="hidden" name="next" value="{{ next }}" />
                                         {% endif %}
