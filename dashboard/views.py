@@ -98,7 +98,8 @@ def dashboard(request):
 
 @login_required(login_url='/accounts/login/')
 def connection_adapter(request):
-    return render_to_response('pages/connection_adapter.html')
+    user = request.user
+    return render_to_response('pages/connection_adapter.html', locals(), RequestContext(request))
 
 
 @login_required(login_url='/accounts/login/')
@@ -106,6 +107,9 @@ def connection(request):
     user = request.user
     users = User.objects.all().order_by('id')
     return render_to_response('pages/connection.html', locals(), RequestContext(request))
+
+
+
 
 
 def get_user_ip(request):
