@@ -91,4 +91,22 @@ class EstablishedConnections(models.Model):
         db_table = 'cdg_established_connections'
 
 
+class EstablishedSource(models.Model):
+    established_sources_seq = models.IntegerField(primary_key=True)
+    es_established_connections_seq = models.ForeignKey(EstablishedConnections, on_delete=models.CASCADE)
+    es_name = models.CharField(max_length=50)
+    es_source_type = models.CharField(max_length=50)
+    es_schema = models.CharField(max_length=100)
+    es_directory = models.CharField(max_length=200)
+    es_connect_string = models.CharField(max_length=100)
+    es_is_active = models.BooleanField(default=False)
+    created_ts = models.DateTimeField(auto_now_add=True)
+    updated_ts = models.DateTimeField(null=True)
+    created_by = models.DateField(auto_now_add=True)
+
+    class Meta:
+        managed = True
+        db_table = 'cdg_established_sources'
+
+
 
