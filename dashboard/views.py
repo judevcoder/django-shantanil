@@ -58,6 +58,11 @@ def login_user(request):
     if request.POST:
         username = request.POST['username']
         password = request.POST['password']
+        next_page = None
+        try:
+            next_page = request.POST['next']
+        except:
+            pass
 
         user = authenticate(username=username, password=password)
         if user is not None:
@@ -74,6 +79,9 @@ def login_user(request):
                 )
 
                 logger.save()
+
+                if next_page:
+                    return HttpResponseRedirect(next_page, {'user': user})
                 return HttpResponseRedirect('/dashboard/', {'user':user})
     return HttpResponseRedirect('/accounts/login')
 
@@ -81,17 +89,19 @@ def login_user(request):
 @login_required(login_url='/accounts/login/')
 def dashboard(request):
     user = request.user
-    users = User.objects.all()
+    users = User.objects.all().order_by('id')
     return render_to_response('pages/dashboard.html', locals(), RequestContext(request))
 
 
+@login_required(login_url='/accounts/login/')
 def connection_adapter(request):
     return render_to_response('pages/connection_adapter.html')
 
 
+@login_required(login_url='/accounts/login/')
 def connection(request):
     user = request.user
-    users = User.objects.all()
+    users = User.objects.all().order_by('id')
     return render_to_response('pages/connection.html', locals(), RequestContext(request))
 
 

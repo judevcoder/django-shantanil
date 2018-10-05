@@ -37,6 +37,9 @@
                                 <div class="form-left text-center">
                                     <form action="/login/" method="post" class="login-form">
                                         {% csrf_token %}
+                                        {% if next %}
+                                            <input type="hidden" name="next" value="{{ next }}" />
+                                        {% endif %}
                                         {% if form.errors %}
                                             {% for field in form %}
                                                 {% for error in field.errors %}
