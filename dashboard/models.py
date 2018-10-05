@@ -220,3 +220,70 @@ class CurrentScheduleActivities(models.Model):
     class Meta:
         managed = True
         db_table = 'cdg_current_schedules_activities'
+
+
+class DatasetLineage(models.Model):
+    dataset_lineage_seq = models.IntegerField(primary_key=True)
+    dl_dataset_seq = models.ForeignKey(DataSet, on_delete=models.CASCADE)
+    dl_dataset_name = models.CharField(max_length=100)
+    dl_dataset_type = models.CharField(max_length=200)
+    dl_parent1_sources_seq = models.ForeignKey(EstablishedSource, on_delete=models.CASCADE)
+    dl_child1_target_seq = models.ForeignKey(EstablishedTarget, on_delete=models.CASCADE)
+    dl_content_type_seq = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    dl_comment = models.TextField()
+    dl_is_active = models.BooleanField(default=False)
+    created_ts = models.DateTimeField(auto_now_add=True)
+    updated_ts = models.DateTimeField(auto_now=True)
+    created_by = models.DateField(auto_now_add=True)
+
+    class Meta:
+        managed = True
+        db_table = 'cdg_dataset_lineage'
+
+
+class SourceLineage(models.Model):
+    source_lineage_seq = models.IntegerField(primary_key=True)
+    sl_established_sources_seq = models.ForeignKey(EstablishedSource, on_delete=models.CASCADE)
+    sl_source_name = models.CharField(max_length=100)
+    # sl_parent1_source_seq = models.ForeignKey(EstablishedSource, on_delete=models.CASCADE)
+    sl_content_type_seq = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    sl_comment = models.TextField()
+    sl_is_active = models.BooleanField(default=False)
+    created_ts = models.DateTimeField(auto_now_add=True)
+    updated_ts = models.DateTimeField(auto_now=True)
+    created_by = models.DateField(auto_now_add=True)
+
+    class Meta:
+        managed = True
+        db_table = 'cdg_source_lineage'
+
+
+class Code(models.Model):
+    code_seq = models.IntegerField(primary_key=True)
+    code_type = models.CharField(max_length=100)
+    code_name = models.IntegerField()
+    code_value = models.IntegerField()
+    code_description = models.TextField()
+    created_ts = models.DateTimeField(auto_now_add=True)
+    updated_ts = models.DateTimeField(auto_now=True)
+    created_by = models.DateField(auto_now_add=True)
+
+    class Meta:
+        managed = True
+        db_table = 'cdg_code'
+
+
+class Functions(models.Model):
+    functions_seq = models.IntegerField(primary_key=True)
+    functions_name = models.CharField(max_length=100)
+    functions_type = models.CharField(max_length=100)
+    functions_description = models.TextField()
+    functions_parameters = models.CharField(max_length=100)
+    functions_is_active = models.BooleanField(default=True)
+    created_ts = models.DateTimeField(auto_now_add=True)
+    updated_ts = models.DateTimeField(auto_now=True)
+    created_by = models.DateField(auto_now_add=True)
+
+    class Meta:
+        managed = True
+        db_table = 'cdg_functions'
