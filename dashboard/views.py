@@ -1,11 +1,8 @@
-from django.views.generic import TemplateView
 from django.http import *
-from django.db import models
 from django.shortcuts import render_to_response,redirect, render
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm
 from .models import UserLogger
 from django.contrib.auth.models import User
