@@ -14,8 +14,6 @@ from django.contrib import messages
 def home(request):
     return HttpResponseRedirect('/dashboard/')
 
-class LimitExceeed(PermissionDenied):
-    pass
 
 def signup(request):
     if request.method == 'POST':
